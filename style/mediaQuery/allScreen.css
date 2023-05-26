@@ -1,0 +1,100 @@
+@media only screen and (max-width: 375px) and (min-width: 375px) {
+  body, .darkmode {
+    background-size: 100% 200px;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  body, .darkmode {
+    background-size: 100% 200px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  body, .darkmode {
+    background-size: 100% 210px;
+  }
+  .container {
+    padding: 50px 70px;
+  }
+  .container #section-two {
+    margin-top: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url("../../images/bg-desktop-light.jpg");
+    background-color: #e4e5f1;
+  }
+  .darkmode {
+    background-image: url("../../images/bg-desktop-dark.jpg");
+    background-color: #161722;
+  }
+  body, .darkmode {
+    background-repeat: no-repeat;
+    background-size: 100% 250px;
+  }
+  .container {
+    padding: 60px 160px;
+  }
+  .container #section-two {
+    margin-top: 3rem;
+  }
+  .container #section-two .create-todolist {
+    padding: 15px 25px;
+  }
+  .container #section-two .create-todolist input[type="text"]::-webkit-input-placeholder {
+    letter-spacing: 1.5px;
+  }
+  .container #section-two .create-todolist input[type="text"]:-ms-input-placeholder {
+    letter-spacing: 1.5px;
+  }
+  .container #section-two .create-todolist input[type="text"]::-ms-input-placeholder {
+    letter-spacing: 1.5px;
+  }
+  .container #section-two .create-todolist input[type="text"]::placeholder {
+    letter-spacing: 1.5px;
+  }
+  .container #section-two .todoContainer {
+    margin-top: 30px;
+  }
+  .container #section-two .todoContainer .todolist {
+    padding: 15px 15px 0px;
+  }
+  .container #section-two .todoContainer .todolist .boxContainer {
+    padding-left: 40px;
+  }
+  .container #section-two .todoContainer .todolist .boxContainer p {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body, .darkmode {
+    background-size: 100% 260px;
+  }
+  .container {
+    padding: 70px 270px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body, .darkmode {
+    background-size: 100% 280px;
+  }
+  .container {
+    padding: 90px 390px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  body, .darkmode {
+    background-size: 100% 300px;
+  }
+  .container {
+    padding: 110px 530px;
+  }
+}
+/*# sourceMappingURL=allScreen.css.map */

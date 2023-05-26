@@ -1,0 +1,47 @@
+//Dark Theme Color
+$DarkBlue: hsl(235, 21%, 11%);
+$DesaturatedBlue: hsl(235, 24%, 19%);
+$LGrayishBlue: hsl(234, 39%, 85%);
+$LGrayishHoverBlue: hsl(236, 33%, 92%);
+$DGrayishBlue: hsl(234, 11%, 52%);
+$VDGrayishBlue: hsl(233, 14%, 35%);
+$VDGrayBlue: hsl(237, 14%, 26%);
+
+.darkmode{
+    background-image: url('../../images/bg-mobile-dark.jpg');
+    background-color: $DarkBlue;
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    color: white;
+
+    #section-two{
+       .create-todolist{
+        background-color: $DesaturatedBlue;
+
+        label{
+            input[type="text"]{color: white;}
+        }
+       }
+
+       .todoContainer{
+
+        .complete{ 
+            color: $VDGrayishBlue;
+            text-decoration: line-through;
+         }
+
+        .todolist{
+            border-bottom: 1px solid $VDGrayBlue;
+            background-color: $DesaturatedBlue;
+
+            .boxContainer:hover input ~ .checkmark{
+                background-color: $VDGrayishBlue;
+            }
+        }
+
+        .listBtn{ background-color: $DesaturatedBlue; }
+        .mobileBtn{ background-color: $DesaturatedBlue;}
+       }
+
+    }
+}

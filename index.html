@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/Darkmode/darkmode.css">
+    <link rel="stylesheet" href="style/mediaQuery/allScreen.css">
+
+    <title>Todolist</title>
+</head>
+<body>
+    <div class="container">
+        <!--Section One-->
+        <section id="section-one">
+            <header>
+                <div class="logo">
+                    <h1>TODO</h1>
+                </div>
+
+                <div class="theme-mode">
+                    <div id="light-mode" onclick="darkMode('lightmode')">
+                        <img src="./images/icon-sun.svg">
+                    </div>
+                    <div id="dark-mode" onclick="darkMode('darkmode')">
+                        <img src="./images/icon-moon.svg">
+                    </div>
+                </div>
+
+                <script type="application/javascript" src="./js/darkmode.js"></script>
+            </header>
+        </section>
+
+        <!--Section Two-->
+        <section id="section-two">
+            <!--Todo input-->
+            <div class="create-todolist" id="addboxlist">
+
+                <label for="todo" id="todo">
+                    <input type="text" id="todoInput" placeholder="Create a new todo...">
+                </label>
+
+            </div>
+
+            <div class="todoContainer">
+
+                <div id="todo-items">
+                <!--todolist here-->
+                </div>
+
+                <div class="listBtn">
+                    <span id="totalItems"></span>
+
+                    <div class="desktopBtn">
+                        <button class="btn" onclick="filterSelection('all')">All</button>
+                        <button class="btn" onclick="filterSelection('active')">Active</button>
+                        <button class="btn" onclick="filterSelection('complete')">Complete</button>
+                    </div>
+
+                    <span style="visibility: hidden;" onclick="clearAllComplete()">Clear Complete</span>
+                </div>
+
+                <div class="mobileBtn">
+                    <button class="btn" onclick="filterSelection('all')">All</button>
+                    <button class="btn" onclick="filterSelection('active')">Active</button>
+                    <button class="btn" onclick="filterSelection('complete')">Complete</button>
+                </div>
+                
+            </div>
+
+            <!--Script for todo-->
+            <script src="./js/todo.js"></script>
+        </section>
+
+        <!--SectioN Three-->
+        <section id="section-three"></section>
+    </div>
+</body>
+</html>

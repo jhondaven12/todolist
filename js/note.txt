@@ -1,0 +1,84 @@
+$(document).ready(function() {
+    const todoStorage = sessionStorage.getItem('todoStorage');
+
+    let todoList;
+
+    if(todoStorage === null) {
+        todoList = [];
+    } else {
+        todoList = JSON.parse(todoStorage);
+    }
+
+    function todoElement() { 
+        let str = '';
+        
+        for(let i = 0; i < todoList.length; i++) {
+            str += `
+            <div class="todolist">
+            <input type="checkbox" class="box" id="${todoList[i].id}" data-input>
+            <label for="${todoList[i].id}" data-label>
+            <p data-todotext>${todoList[i].text}</p>
+            </label>
+            <div class="deltodoBtn" onclick="deltodo(${i})" data-del-checkbox>
+            <img src="./images/icon-cross.svg">
+            </div>
+            </div>
+            `;
+        }
+    $('#todo-items').html(str);
+    }
+
+    todoElement();
+
+    $('#todoInput').keypress(function (e) { 
+        if(e.key === 'Enter') {
+            if($('#todoInput').val() === ''){
+                $('#addboxlist').css('border', '2px solid red');
+            } else {
+                createTodo();
+                $('#addboxlist').css('border', '2px solid transparent');
+                $('#todoInput').val('');
+            }
+        }
+    });
+
+    //Add list to Storage
+    function createTodo(){
+        //Generate Random id
+        let id = () => {
+            return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+
+        let txt = $('#todoInput').val().trim();
+
+        todoList.push({
+            id: id(),
+            text: txt,
+            complete: ''
+        });
+
+        todoElement();
+        sessionStorage.setItem('todoStorage', JSON.stringify(todoList));
+    }
+
+    $('[data-input]').click(function (e) { 
+        let listItem = $('input').index($(this));
+        let i = Number(listItem) - 2;
+
+        const updateData = {
+            id: todoList[i].id,
+            text: todoList[i].text,
+            complete: 'successs'
+        }
+
+        todoList.splice(i, 1, updateData);
+
+        todoElement();
+        sessionStorage.getItem('todoStorage', JSON.stringify(todoList));
+    });
+});
+
+
+

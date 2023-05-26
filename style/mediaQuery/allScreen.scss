@@ -1,0 +1,104 @@
+
+@media only screen and (max-width: 375px) and (min-width: 375px){
+    body, .darkmode{
+        background-size: 100% 200px;
+    }
+}
+
+@media only screen and (min-width: 375px){
+    body, .darkmode{
+        background-size: 100% 200px;
+    }
+}
+
+@media only screen and (min-width: 576px){
+    body, .darkmode{
+        background-size: 100% 210px;
+    }    
+
+    .container{
+        padding: 50px 70px;
+
+        #section-two{
+            margin-top: 2.5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    body{
+        background-image: url('../../images/bg-desktop-light.jpg');
+        background-color: hsl(236, 33%, 92%);
+    }
+
+    .darkmode{
+        background-image: url('../../images/bg-desktop-dark.jpg');
+        background-color: hsl(235, 21%, 11%);;
+    }
+
+    body, .darkmode{
+        background-repeat: no-repeat;
+        background-size: 100% 250px;
+    }
+    .container{
+        padding: 60px 160px;
+
+        #section-two{
+            margin-top: 3rem;
+
+            .create-todolist{
+                padding: 15px 25px;
+
+                input[type="text"]::placeholder{
+                    letter-spacing: 1.5px;
+                }
+            }
+            .todoContainer{
+                margin-top: 30px;
+                .todolist{
+                   padding: 15px 15px 0px;
+
+                   .boxContainer{
+                    padding-left: 40px;
+
+                    p{
+                        font-size: 16px;
+                        margin-bottom: 12px;
+                    }
+                   }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px){
+    body, .darkmode{
+        background-size: 100% 260px;
+    }
+    .container{
+        padding: 70px 270px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    body, .darkmode{
+        background-size: 100% 280px;
+    }
+    .container{
+        padding: 90px 390px;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    body, .darkmode{
+        background-size: 100% 300px;
+    }
+
+    .container{
+        padding: 110px 530px;
+    }
+}
+
+
+

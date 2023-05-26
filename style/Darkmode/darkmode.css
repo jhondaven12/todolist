@@ -1,0 +1,38 @@
+.darkmode {
+  background-image: url("../../images/bg-mobile-dark.jpg");
+  background-color: #161722;
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+  color: white;
+}
+
+.darkmode #section-two .create-todolist {
+  background-color: #25273c;
+}
+
+.darkmode #section-two .create-todolist label input[type="text"] {
+  color: white;
+}
+
+.darkmode #section-two .todoContainer .complete {
+  color: #4d5066;
+  text-decoration: line-through;
+}
+
+.darkmode #section-two .todoContainer .todolist {
+  border-bottom: 1px solid #393a4c;
+  background-color: #25273c;
+}
+
+.darkmode #section-two .todoContainer .todolist .boxContainer:hover input ~ .checkmark {
+  background-color: #4d5066;
+}
+
+.darkmode #section-two .todoContainer .listBtn {
+  background-color: #25273c;
+}
+
+.darkmode #section-two .todoContainer .mobileBtn {
+  background-color: #25273c;
+}
+/*# sourceMappingURL=darkmode.css.map */

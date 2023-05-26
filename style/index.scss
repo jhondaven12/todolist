@@ -1,0 +1,242 @@
+//Primary
+$brigthblue: hsl(220, 98%, 61%);
+$checkbg: hsl(192, 100%, 67%),hsl(280, 87%, 65%);
+
+//Light Theme Color
+$VLgray: hsl(0, 0%, 98%);
+$VLgrayblue: hsl(236, 33%, 92%);
+$LGrayblue: hsl(233, 11%, 84%);
+$DGrayblue: hsl(236, 9%, 61%);
+$VDGrayblue: hsl(235, 19%, 35%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image:  url('../images/bg-mobile-light.jpg');
+    background-color: $VLgrayblue,;
+    background-repeat: no-repeat;
+    background-size: 100% 195px;
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    padding: 50px 20px;
+   
+    //Section One Starts Here
+    #section-one{
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo{
+            h1{
+                font-size: 1.9rem;
+                color: white;
+                letter-spacing: 0.6rem;
+            }
+        }
+
+        .theme-mode{
+            img{margin-top: 3px;}
+            #light-mode{ display: none;}
+        }
+    }
+
+    //Section Two Starts Here
+    #section-two{
+        margin-top: 2rem;
+        .create-todolist{
+            position: relative;
+            background-color: $VLgray;
+            border-radius: 5px;
+            padding: 12px 25px;
+            border: 2px solid transparent;
+
+           label{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            input[type="text"]{
+                background: transparent;
+                margin: 0 0 0 20px;
+                width:90%;
+                border: none;
+                outline: none;
+                color: $VDGrayblue;
+            }
+            input[type="text"]::placeholder{
+                font-weight: 600;
+            }
+           }
+           
+           label::after{
+            content: "";
+            border: 1px solid $DGrayblue;
+            border-radius: 1000px;
+            width: 16px;
+            aspect-ratio: 1;
+            position: absolute;
+            left: 20px;
+           }
+        }
+        .todoContainer{
+            margin-top: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%;
+
+            //if checkbox is checked
+            .complete{
+                color: $DGrayblue;
+                text-decoration: line-through;
+            }
+
+            .todolist{
+                position: relative;
+                border-bottom: 1px solid $LGrayblue;
+                background-color: white;
+                padding: 13px 15px 0px;
+                display: none; /* Hidden by default */
+
+                .boxContainer{
+                    display: block;
+                    position: relative;
+                    padding-left: 35px;
+                    
+                    p{
+                        font-size: 14px;
+                        margin-bottom: 8px;
+                        margin-left: -10px;
+                    }
+                   /* cursor: pointer;
+                    font-size: 22px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;*/
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+
+                    .checkmark{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 16px;
+                        width: 16px;
+                        border: 1px solid $DGrayblue;
+                        border-radius: 100%;
+                    }
+                }
+                .boxContainer:hover input ~ .checkmark{
+                    background-color: #ccc;
+                }
+                .boxContainer input:checked ~ .checkmark{
+                    background: url('../images/icon-check.svg'), linear-gradient(80deg, $checkbg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                .boxContainer input:checked ~ .checkmark::after{
+                    display: block;
+                }
+
+                .boxContainer .checkmark::after{
+                    left: 3px;
+                    top: 1px;
+                    width: 5px;
+                    height: 6px;
+                    border: 1px solid white;
+                    border-width: 0 3px 3px 0;
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                }
+                .deltodoBtn{
+                    position: absolute;
+                    top: 12px;
+                    right: 13px;
+                    display: none;
+
+                    img{
+                        width: 12px;
+                        aspect-ratio: 1;
+                    }
+                }
+            }
+
+            // The "show" class is added to the filtered elements
+            .show{
+                display: block;
+            }
+            //Delete Button
+            .todolist:hover{
+                .deltodoBtn{ display: block;}
+            }
+
+            .listBtn{
+                background-color: white;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 13px;
+                border-radius: 0 0 5px 5px;
+
+                span, button{
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin: auto 0;
+                    color: $DGrayblue;
+                    cursor: pointer;
+                }
+
+                .desktopBtn{
+                    visibility: hidden;
+                    padding: 5px 0px;
+                    button{
+                        background: none;
+                        border: none;
+                        outline: none;
+                        margin: 0 5px;
+                    }
+                }
+                span:hover, button:hover{
+                    color: $brigthblue;
+                    transition: .7s ease;
+                }
+            }
+            .mobileBtn{
+                background-color: white;
+                width: 100%;
+                margin: 20px auto 0 auto;
+                padding: 15px;
+                text-align: center;
+                border-radius: 5px;
+
+                button{
+                    background: none;
+                    border: none;
+                    outline: none;
+                    margin: 0 5px;
+                    color: $DGrayblue;
+                    font-weight: 700;
+                }
+                button:hover{
+                    color: $brigthblue;
+                    transition: .7s ease;
+                }
+            }
+        }
+    }
+}
